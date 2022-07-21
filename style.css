@@ -1,0 +1,16 @@
+.container{
+    max-width:  1000px;
+    margin: 0 auto;
+   
+}
+header{
+    text-align: center;
+    width: 880px;
+    height: 350px;
+
+}
+section{
+    width: 545px;
+    height: 634px;
+
+}
