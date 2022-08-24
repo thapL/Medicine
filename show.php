@@ -33,10 +33,6 @@ if($connect === FALSE)
 }
 $stmt   = "select * from MeStockMedicine ";
 
-
-//where std.Fac_id = fac.fac_id and std.Std_id = std.Std_id
-
-
 $query  = sqlsrv_query($connect,$stmt);
 ?>
 <div class="container">
