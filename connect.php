@@ -1,5 +1,5 @@
 <html>
-<head>
+<head> 
     <title>connection_status</title>
 </head>
 <body>
@@ -13,7 +13,7 @@ $userName = "";
 $userPassword = "";
 $dbName = "dbMKS";
 
-$connectionInfo = array("Database"=>$dbName, "UID"=>$userName, "PWD"=>$userPassword, "MultipleActiveResultSets"=>true);
+$connectionInfo = array("Database"=>$dbName, "UID"=>$userName, "PWD"=>$userPassword, "MultipleActiveResultSets"=>true,"CharacterSet"=>'UTF-8');
 
 $conn = sqlsrv_connect( $serverName, $connectionInfo);
 
