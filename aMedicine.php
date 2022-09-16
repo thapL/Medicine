@@ -30,7 +30,7 @@ if($connect === FALSE)
     sqlsrv_close($connect);
     if($result)
     {
-        echo "เชื่อมต่อแล้วววววววววววววววว";
+        echo "เพิ่มข้อมูลแล้ว";
     }
     else
     {

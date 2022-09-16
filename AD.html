@@ -1,40 +1,52 @@
 <!DOCTYPE html>
-<html>
-<head><meta charset=utf-8>
-<title>เพิ่มข้อมูลพนักงาน</title></head>
-<body>
+<html >
+<head>
+    <meta charset="utf-8" name="viewport" content="widt=device-width">
+    <style>
 
- <form action="aMedicine.php" method="get">
-enctype=“multipart/form-data”>
-<table  cellspacing=“0”>
-<tr><td>ชื่อ : </td><td><input type=“text” name=“name” id=“name”></td></tr>
-<tr><td>ต าแหน่งงาน : </td><td><select name=“position”>
-<option value=“การตลาด”>การตลาด</option>
-<option value=“บัญชี”>บัญชี</option>
-<option value=“ธุรการ”>ธุรการ</option>
-<option value=“การผลิต”>การผลิต</option>
-<option value=“ผู้จัดการ”>ผู้จัดการ</option>
-</select></td></tr>
-<td>เงินเดือน : </td><td><input type=“number” name=“salary” id=“salary”>
-</td></tr>
-<td>วันเริ่มท างาน : </td><td>
-<input type=“date” name=“startDate” id=“startDate”></td></tr>
-<tr><td>ที่อยู่ : </td><td>
-<textarea name=“address” id=“address” cols=“30” rows=“5”> </textarea>
-</td></tr>
+     section{
+        font-size: 38px;
+        color: azure;
 
-<tr><td>เบอร์โทรศัพท์ : </td><td><input type=“text” name=“tel” id=“tel”>
-</td></tr>
-<tr><td>วันเกิด : </td><td><input type=“date” name=“birthday” id=“birthday”>
-</td></tr>
-<tr><td>สถานะภาพ:</td><td><input type=“radio” name=“status” value=“โสด”> โสด 
-<input type=“radio” name=“status” value=“สมรส”> สมรส
-<input type=“radio” name=“status” value=“หญ่าร้าง”> หญ่าร้าง </td></tr>
-<tr><td>รูปภาพ : </td><td><input type=“file” name=“photo” id=“photo”>
-</td></tr>
-</table><br/>
-<input type=“submit” value=“เพิ่มข้อมูล” name=“ok”>
-<input type=“reset” value=“ยกเลิก” name=“cancel”>
+    }
+
+select{
+    font-size: 24px;
+    
+    }
+input{
+    font-size: large;
+}
+
+    </style>
+
+
+</head>
+
+<body style =" background-image: url('bg.png');background-attachment: fixed;background-size: cover"><!--Add background-->
+
+<form action="aMedicine.php" method="post">
+
+<section>
+   
+ <br><br><br>
+    <table  cellspacing="8" >
+    <tr><td>ชื่อ : </td><td><input type="text" name="MeName"></td></tr>
+    <tr><td>จำนวน : </td><td><input type="number" name="MeIn"></td></tr>
+    <tr><td>หน่วย : </td><td><select name="MeUnit"  >
+        <option value="เม็ด">เม็ด</option>
+        <option value="ขวด">ขวด</option>
+        <option value="แผง">แผง</option>
+    <tr><td>IdCode : </td><td><input type="number" name="MeCode"></td>
+    </select></td></tr><br>
+    </table><br/>
+
+    
+    <input type="submit" name="submit"  value="ส่ง" style="position: 24px;">
+
+
+
+</section>
 </form>
 
 </body>

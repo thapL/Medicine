@@ -10,7 +10,13 @@ header{
 
 }
 section{
-    width: 545px;
-    height: 634px;
-
+    font-size: 88px;
+    color: azure;
+    background-color: brown;
 }
+
+select{
+    font-size: 24px;
+    
+}
+
