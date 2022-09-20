@@ -17,8 +17,19 @@ select{
     }
 input{
     font-size: large;
+    
 }
-
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+input[type=number] {
+  -moz-appearance: textfield;
+}    
+input[type=sub1mit]{
+    font-size: large;
+}
     </style>
 
 
@@ -29,21 +40,23 @@ input{
 <form action="aMedicine.php" method="post">
 
 <section>
-   
- <br><br><br>
+ <br><br>
     <table  cellspacing="8" >
+ 
+    <tr><td>IdCode : </td><td><input type="number" name="MeCode"></td>
     <tr><td>ชื่อ : </td><td><input type="text" name="MeName"></td></tr>
-    <tr><td>จำนวน : </td><td><input type="number" name="MeIn"></td></tr>
+    <tr><td>จำนวน : </td><td><input type="number" in="number" name="MeIn"></td></tr>
+    <tr><td>Amount : </td><td><input type="float" in="float" name="MeAmount"></td></tr>
     <tr><td>หน่วย : </td><td><select name="MeUnit"  >
         <option value="เม็ด">เม็ด</option>
         <option value="ขวด">ขวด</option>
         <option value="แผง">แผง</option>
-    <tr><td>IdCode : </td><td><input type="number" name="MeCode"></td>
+
     </select></td></tr><br>
     </table><br/>
 
-    <button type="submit" class="btn btn-success">Success</button>
-    <input type="submit" name="submit"  value="ส่ง" style="position: 24px;">
+    <button type="submit" name="submit" class="btn btn-success">Success</button>
+    
 
 
 

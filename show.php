@@ -31,10 +31,13 @@ if($connect === FALSE)
 {
     die( print_r( sqlsrv_errors(), true));
 }
+
 $stmt   = "select * from MeStockMedicine ";
 
-$query  = sqlsrv_query($connect,$stmt);
+$query  = sqlsrv_query($connect,$stmt);     
+
 ?>
+
  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <div class="container">
 
@@ -45,23 +48,27 @@ $query  = sqlsrv_query($connect,$stmt);
             <tr>
                 <th style="text-align: center">ID</th>
                 <th style="text-align: center">Name</th>
+                <th style="text-align: center">Quantity</th>
                 <th style="text-align: center">Uint</th>
                 <th style="text-align: center">Amount</th>
-
+                
             <tr>
             </thead>
             <?php
+            
             while ($result = sqlsrv_fetch_array($query,SQLSRV_FETCH_ASSOC))
             {
                 ?>
+             
                 <tbody>
                 <tr>
                     <th><?PHP echo $result["MeCode"]; ?></th>
                     <th><?PHP echo $result["MeName"];?> &nbsp; </th>
+                    <th><?php echo $result["MeIn"];?></th>
                     <th><?PHP echo $result["MeUnit"];?></th>
                     <th><?PHP echo $result["MeAmount"];?></th>
-                    <th><?php echo $result["MeLname"];?></th>
-
+                    
+                
                 </tr>
                 </tbody>
                 <?PHP

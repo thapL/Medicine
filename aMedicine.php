@@ -3,6 +3,7 @@
     $MeIn   = $_POST['MeIn'];
     $MeUnit = $_POST['MeUnit'];
     $MeCode = $_POST['MeCode'];
+    $MeAmount = $_POST['MeAmount'];
     ##include "connect.php";
     ini_set('display_errors', 1);
         error_reporting(~0);
@@ -25,7 +26,7 @@ if($connect === FALSE)
     die( print_r( sqlsrv_errors(), true));
 }
 
-    $add = " INSERT INTO dbo.MeStockMedicine(MeName, MeIn,  MeUnit, MeCode) VALUES ('$MeName','$MeIn','$MeUnit','$MeCode')";
+    $add = " INSERT INTO dbo.MeStockMedicine(MeName, MeIn,  MeUnit, MeCode,MeAmount) VALUES ('$MeName','$MeIn','$MeUnit','$MeCode','$MeAmount')";
     $result = sqlsrv_query($connect,$add);
     sqlsrv_close($connect);
     if($result)
