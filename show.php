@@ -17,7 +17,7 @@ error_reporting(~0);
 $serverName = "127.0.0.1";
 $userName = "";
 $userPassword = "";
-$dbName = "dbMKS";
+$dbName = "MediCin";
 
 $connectionInfo = array(
     "Database"=>$dbName,
@@ -32,7 +32,7 @@ if($connect === FALSE)
     die( print_r( sqlsrv_errors(), true));
 }
 
-$stmt   = "select * from MeStockMedicine ";
+$stmt   = "select * from dbo.tb_Medic ";
 
 $query  = sqlsrv_query($connect,$stmt);     
 
@@ -50,7 +50,7 @@ $query  = sqlsrv_query($connect,$stmt);
                 <th style="text-align: center">Name</th>
                 <th style="text-align: center">Quantity</th>
                 <th style="text-align: center">Uint</th>
-                <th style="text-align: center">Amount</th>
+                <th style="text-align: center">Category</th>
                 
             <tr>
             </thead>
@@ -62,11 +62,11 @@ $query  = sqlsrv_query($connect,$stmt);
              
                 <tbody>
                 <tr>
-                    <th><?PHP echo $result["MeCode"]; ?></th>
-                    <th><?PHP echo $result["MeName"];?> &nbsp; </th>
-                    <th><?php echo $result["MeIn"];?></th>
-                    <th><?PHP echo $result["MeUnit"];?></th>
-                    <th><?PHP echo $result["MeAmount"];?></th>
+                    <th><?PHP echo $result["Medic_Id"]; ?></th>
+                    <th><?PHP echo $result["Medic_name"];?> &nbsp; </th>
+                    <th><?php echo $result["Medic_quan"];?></th>
+                    <th><?PHP echo $result["Medic_Unit"];?></th>
+                    <th><?PHP echo $result["Category_name"];?></th>
                     
                 
                 </tr>

@@ -2,37 +2,9 @@
 <html >
 <head>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" >
+    <link rel="stylesheet" href="adstyle.css">
     <meta charset="utf-8" name="viewport" content="widt=device-width">
-    <style>
-
-     section{
-        font-size: 38px;
-        color: azure;
-
-    }
-
-select{
-    font-size: 24px;
     
-    }
-input{
-    font-size: large;
-    
-}
-input::-webkit-outer-spin-button,
-input::-webkit-inner-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
-}
-input[type=number] {
-  -moz-appearance: textfield;
-}    
-input[type=sub1mit]{
-    font-size: large;
-}
-    </style>
-
-
 </head>
 
 <body style =" background-image: url('bg.png');background-attachment: fixed;background-size: cover"><!--Add background-->
@@ -43,19 +15,32 @@ input[type=sub1mit]{
  <br><br>
     <table  cellspacing="8" >
  
-    <tr><td>IdCode : </td><td><input type="number" name="MeCode"></td>
-    <tr><td>ชื่อ : </td><td><input type="text" name="MeName"></td></tr>
-    <tr><td>จำนวน : </td><td><input type="number" in="number" name="MeIn"></td></tr>
-    <tr><td>Amount : </td><td><input type="float" in="float" name="MeAmount"></td></tr>
-    <tr><td>หน่วย : </td><td><select name="MeUnit"  >
-        <option value="เม็ด">เม็ด</option>
+    <tr><td>Id : </td><td><input type="number" name="Medic_Id"></td>
+    <tr><td>ชื่อ : </td><td><input type="text" name="Medic_name"></td></tr>
+    <tr><td>จำนวน : </td><td><input type="number" in="number" name="Medic_quan"></td></tr>
+    <tr><td>หมวด : </td><td><input type="float" in="float" name="Category_name"></td></tr>
+    <tr><td>หน่วย : </td><td><select name="Medic_Unit"  >
+        <option value="เม็ด">Tab</option>
         <option value="ขวด">ขวด</option>
         <option value="แผง">แผง</option>
+        <option value="ซอง">ซอง</option>
+        <option value="cap">cap</option>
+        <option value="ตลับ">ตลับ</option>
+        <option value="แผ่น">แผ่น</option>
+        <option value="ม้วน">ม้วน</option>
+        <option value="ห่อ">ห่อ</option>
+        <option value="ก้าน">ก้าน</option>
+        <option value="แพ๊ก">แพ๊ก</option>
+        <option value="กล่อง">กล่อง</option>
+        <option value="อัน">อัน</option>
+        <option value="แผ่น">แผ่น</option>
 
     </select></td></tr><br>
     </table><br/>
 
-    <button type="submit" name="submit" class="btn btn-success">Success</button>
+    <button type="submit" name="submit" class="button">Success</button>
+    <button type="reset" name="reset" class="reset">Reset</button>
+    
     
 
 

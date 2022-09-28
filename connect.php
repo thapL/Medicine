@@ -11,7 +11,7 @@ error_reporting(~0);
 $serverName = "localhost";
 $userName = "";
 $userPassword = "";
-$dbName = "dbMKS";
+$dbName = "tb_Medic";
 
 $connectionInfo = array("Database"=>$dbName, "UID"=>$userName, "PWD"=>$userPassword, "MultipleActiveResultSets"=>true,"CharacterSet"=>'UTF-8');
 

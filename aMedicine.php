@@ -1,9 +1,9 @@
 <?php
-    $MeName = $_POST['MeName'];
-    $MeIn   = $_POST['MeIn'];
-    $MeUnit = $_POST['MeUnit'];
-    $MeCode = $_POST['MeCode'];
-    $MeAmount = $_POST['MeAmount'];
+    $MeName = $_POST['Medic_name'];
+    $MeIn   = $_POST['Medic_quan'];
+    $MeUnit = $_POST['Medic_Unit'];
+    $MeCode = $_POST['Medic_Id'];
+    $MeAmount = $_POST['Category_name'];
     ##include "connect.php";
     ini_set('display_errors', 1);
         error_reporting(~0);
@@ -11,7 +11,7 @@
             $serverName = "127.0.0.1";
             $userName = "";
             $userPassword = "";
-            $dbName = "dbMKS";
+            $dbName = "tb_Medic";
 
     $connectionInfo = array(
     "Database"=>$dbName,
@@ -26,7 +26,7 @@ if($connect === FALSE)
     die( print_r( sqlsrv_errors(), true));
 }
 
-    $add = " INSERT INTO dbo.MeStockMedicine(MeName, MeIn,  MeUnit, MeCode,MeAmount) VALUES ('$MeName','$MeIn','$MeUnit','$MeCode','$MeAmount')";
+    $add = " INSERT INTO dbo.tb_Medic(Medic_name, Medic_quan,  Medic_Unit, Medic_Id,Category_name) VALUES ('$Medic_name','$Medic_quan','$Medic_Unit','$Medic_Id','$Category_name')";
     $result = sqlsrv_query($connect,$add);
     sqlsrv_close($connect);
     if($result)
