@@ -35,7 +35,6 @@ if($connect === FALSE)
 $stmt   = "select * from dbo.tb_Medic ";
 
 $query  = sqlsrv_query($connect,$stmt);     
-
 ?>
 
  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -51,7 +50,7 @@ $query  = sqlsrv_query($connect,$stmt);
                 <th style="text-align: center">Quantity</th>
                 <th style="text-align: center">Uint</th>
                 <th style="text-align: center">Category</th>
-                
+                <th style="text-align: center">edit</th>
             <tr>
             </thead>
             <?php
@@ -67,8 +66,9 @@ $query  = sqlsrv_query($connect,$stmt);
                     <th><?php echo $result["Medic_quan"];?></th>
                     <th><?PHP echo $result["Medic_Unit"];?></th>
                     <th><?PHP echo $result["Category_name"];?></th>
-                    
-                
+                    <th style="text-align: center">
+                    <a href="editdat.php?Medic_Id=<?php echo $result['Medic_Id'];?>"> edit</a>
+                    </th>
                 </tr>
                 </tbody>
                 <?PHP

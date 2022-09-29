@@ -1,17 +1,16 @@
 <?php
-    $MeName = $_POST['Medic_name'];
-    $MeIn   = $_POST['Medic_quan'];
-    $MeUnit = $_POST['Medic_Unit'];
-    $MeCode = $_POST['Medic_Id'];
-    $MeAmount = $_POST['Category_name'];
-    ##include "connect.php";
-    ini_set('display_errors', 1);
+    $Medic_name = $_POST['Medic_name'];
+    $Medic_quan   = $_POST['Medic_quan'];
+    $Medic_Unit = $_POST['Medic_Unit'];
+    $Medic_Id = $_POST['Medic_Id'];
+    $Category_name = $_POST['Category_name'];
+  ini_set('display_errors', 1);
         error_reporting(~0);
 
             $serverName = "127.0.0.1";
             $userName = "";
             $userPassword = "";
-            $dbName = "tb_Medic";
+            $dbName = "MediCin";
 
     $connectionInfo = array(
     "Database"=>$dbName,
@@ -38,7 +37,7 @@ if($connect === FALSE)
         die( print_r( sqlsrv_errors(), true));
     }
     
-    ##sqlsrv_close($connect);
+ 
 
 
 
