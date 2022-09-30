@@ -1,9 +1,6 @@
 <?php
-    $Medic_name = $_POST['Medic_name'];
-    $Medic_quan   = $_POST['Medic_quan'];
-    $Medic_Unit = $_POST['Medic_Unit'];
-    $Medic_Id = $_POST['Medic_Id'];
-    $Category_name = $_POST['Category_name'];
+$Medic_Id = $_GET['Medic_Id'];
+
   ini_set('display_errors', 1);
         error_reporting(~0);
 
@@ -25,29 +22,19 @@ if($connect === FALSE)
     die( print_r( sqlsrv_errors(), true));
 }
 
-    $add = " INSERT INTO dbo.tb_Medic(Medic_name, Medic_quan,  Medic_Unit, Medic_Id,Category_name) VALUES ('$Medic_name','$Medic_quan','$Medic_Unit','$Medic_Id','$Category_name')";
-    $result = sqlsrv_query($connect,$add);
+    $add = "DELETE FROM dbo.tb_Medic WHERE Medic_Id='$Medic_Id'";
+
+$result = sqlsrv_query($connect,$add);
     sqlsrv_close($connect);
     if($result)
     {
-        echo "เพิ่มข้อมูลแล้ว";
-        echo "<meta http-equiv='refresh' content='2; url=show.php'>";
+        echo "ลบข้อมูลแล้ว";
+        echo"<mete http-equiv='refresh' content='2;url=show.php'>";
+        
     }
     else
     {
         die( print_r( sqlsrv_errors(), true));
-    }
-    
- 
-
-
-
-
-
-
-
-
-
-
-
-?>
+        echo"ไม่สามารถลบข้อมูลได้";
+    }   echo "<meta http-equiv='refresh' content='2; url=show.php'>";
+    ?>

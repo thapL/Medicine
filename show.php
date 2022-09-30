@@ -51,6 +51,7 @@ $query  = sqlsrv_query($connect,$stmt);
                 <th style="text-align: center">Uint</th>
                 <th style="text-align: center">Category</th>
                 <th style="text-align: center">edit</th>
+                <th style="text-align: center">Delete</th>
             <tr>
             </thead>
             <?php
@@ -68,6 +69,8 @@ $query  = sqlsrv_query($connect,$stmt);
                     <th><?PHP echo $result["Category_name"];?></th>
                     <th style="text-align: center">
                     <a href="editdat.php?Medic_Id=<?php echo $result['Medic_Id'];?>"> edit</a>
+                    <th style="text-align: center">
+                    <a href="delete.php?Medic_Id=<?php echo $result['Medic_Id'];?>"> delete</a>
                     </th>
                 </tr>
                 </tbody>

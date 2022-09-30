@@ -35,14 +35,14 @@ die( print_r( sqlsrv_errors(), true));
     
 ?>
 
-<form action="aMedicine.php" method="post">
+<form action="eMedicine.php" method="post">
 
 <section>
 
  <br><br>
-    <table  cellspacing="8" >
+    <table  cellspacing="8" >   
  
-    <tr><td>Id : </td><td><input type="number" name="Medic_Id" value="<?php echo $row['Medic_Id'];?>"></td>
+   
     <tr><td>ชื่อ : </td><td><input type="text" name="Medic_name" value="<?php echo $row['Medic_name'];?>"></td></tr>
     <tr><td>จำนวน : </td><td><input type="number" in="number" name="Medic_quan" value="<?php echo $row['Medic_quan'];?>"></td></tr>
     <tr><td>หมวด : </td><td><input type="text" in="text" name="Category_name" value="<?php echo $row['Category_name'];?>"></td></tr>
