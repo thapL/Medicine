@@ -66,7 +66,13 @@ die( print_r( sqlsrv_errors(), true));
     </table><br/>
 
     <button type="submit" name="submit" class="button">Success</button>
-    <button type="reset" name="reset" class="reset">Reset</button>
+    <button type="reset" name="reset" class="reset">Reset</button></br>
+
+    <a href="show.php"  style = " background-color: #920deb;border: none;color: white; padding: 15px 32px;text-align: center;text-decoration: none;display: inline-block;
+    font-size: 20px;
+    margin: 4px 2px;
+    cursor: pointer;
+    font-weight:500;">   Show Detail    </a>
     
     
 
