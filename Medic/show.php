@@ -27,8 +27,11 @@
     font-size: 20px;
     margin: 4px 2px;
     cursor: pointer;
-    font-weight:500;" >      Diapansed   </a> 
+    font-weight:500;" >      Diapansed   </a>  
+</head>
 
+<body class="single_post_page" data-spy="scroll" data-target=".navbar-fixed-top" data-offset="100">
+    
 </head>
 <style>
 </style>

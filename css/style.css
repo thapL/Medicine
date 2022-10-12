@@ -17,6 +17,7 @@ URL:            http://www.tabthemes.com/
 /*--------------------------------------------------
     01. General Styles 
 ---------------------------------------------------*/
+
 html {
   overflow-y: scroll;
   -ms-overflow-style: scrollbar;
@@ -802,6 +803,9 @@ blockquote {
   width: 20%;
   padding-right: 15px;
 }
+.logo{
+  size: 20px;
+}
 .navbar-header .logo-container {
   padding: 0 15px;
   float: left;
@@ -825,7 +829,9 @@ blockquote {
   -webkit-transition: all 0.3s ease-in-out;
   -o-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
+ 
 }
+
 .navbar-nav {
   margin: 0;
   float: none;
@@ -2211,6 +2217,8 @@ blockquote {
   background: #ed5f5e;
   color: #fff;
 }
+
+
 /*--------------------------------------------------
     **. Responsive {should come last}
 ---------------------------------------------------*/

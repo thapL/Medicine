@@ -4,18 +4,20 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=tis-620">
     
-    <title>J.|thap</title>
+    
+    <title>INDEX</title>
     
     <meta name="description" content="N.Agency - Responisve Landing Page for Agency">
     <meta name="keywords" content="">
     <meta name="author" content="tabthemes">
     
     <!-- Favicons -->
-    <link rel="shortcut icon" href="img/favicon.png">
-    <link rel="apple-touch-icon" sizes="57x57" href="img/apple-touch-icon-57x57.png">
-    <link rel="apple-touch-icon" sizes="72x72" href="img/apple-touch-icon-72x72.png">
-    <link rel="apple-touch-icon" sizes="114x114" href="img/apple-touch-icon-114x114.png">-->
+    <link rel="shortcut icon" href="img/mks-logo.jpg">
+    <link rel="apple-touch-icon" sizes="57x57" href="img/mks-logo.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="img/mks-logo.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="img/mks-logo.png">
     
     <!-- Google Web Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
@@ -48,7 +50,6 @@
   </head>
   <body class="single_post_page" data-spy="scroll" data-target=".navbar-fixed-top" data-offset="100">
     
-    
     <!-- Preloader -->
     <div id="preloader">
         <div id="spinner"></div>
@@ -75,8 +76,8 @@
                             <!-- Logo -->
                             <div class="logo-container">
                                 <div class="logo-wrap local-scroll">
-                                  <a href="index.html">
-                                    <img class="logo" src="img/logo.png" alt="logo" data-rjs="2">
+                                  <a href="index.php">
+                                    <img class="logo" src="img/mks-logo.jpg" size="10px" alt="logo" data-rjs="2">
                                   </a>
                                 </div>
                             </div>
@@ -86,7 +87,7 @@
                             <div class="collapse navbar-collapse" id="navbar-collapse">
 
                                 <ul class="nav navbar-nav navbar-right">
-                                    <li><a data-scroll href="#doc-start">Start</a></li>
+                                    <li><a data-scroll href="#doc-start">MEdic TABAL</a></li>
                                     <li><a data-scroll href="#doc-header">Header</a></li>
                                     <li><a data-scroll href="#doc-pe">Page Elements</a></li>
                                     <li><a data-scroll href="#doc-slider">Slider</a></li>
@@ -106,12 +107,17 @@
     </header>
     <!-- End Navigation -->
 
+<?php include "connect.php";
+$stmt   = "select * from dbo.tb_Medic ";
+
+$query  = sqlsrv_query($connect,$stmt);      ?>      
 
     <!-- Start Intro -->
     <section id="doc-intro" class="light-bg p-top-100 p-bottom-100">
         <div class="container">
             <div class="row">
                 <div class="text-center">
+          
                     <h1><strong>N.Agency - Responisve Landing Page for Agency</strong></h1>
                     <h3>Documentation - v.1.0</h3>
                     <p><strong>Support via Email</strong> : <a href="mailto:support@tabthemes.com">support@tabthemes.com</a> / <strong>Support Forum</strong> : Coming Soon!</p>
@@ -128,7 +134,53 @@
         <div class="container">
             <div class="row">
 
-                <h2><strong>Start</strong></h2>
+                <h2><strong>medic table</strong></h2>
+                <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<div class="container">
+
+    <div class="row">
+        <table class="table table-condensed table-striped table-bordered background-color: while" >
+            <thead>
+           
+            <tr>
+                <th style="text-align: center">ID</th>
+                <th style="text-align: center">Name</th>
+                <th style="text-align: center">Quantity</th>
+                <th style="text-align: center">Uint</th>
+                <th style="text-align: center">Category</th>
+                <th style="text-align: center">edit</th>
+                <th style="text-align: center">Delete</th>
+            <tr>
+            </thead>
+            <?php
+            
+            while ($result = sqlsrv_fetch_array($query,SQLSRV_FETCH_ASSOC))
+            {
+                ?>
+             
+                <tbody>
+                <tr>
+                    <th><?PHP echo $result["Medic_Id"]; ?></th>
+                    <th><?PHP echo $result["Medic_name"];?> &nbsp; </th>
+                    <th><?php echo $result["Medic_quan"];?></th>
+                    <th><?PHP echo $result["Medic_Unit"];?></th>
+                    <th><?PHP echo $result["Category_name"];?></th>
+                    <th style="text-align: center">
+                    <a href="Medic/editdat.php?Medic_Id=<?php echo $result['Medic_Id'];?>"
+                    onclick="return confirm('ต้องการแก้ไขข้อมูล<?php echo $result['Medic_name'];?>')"> edit</a>
+                    <th style="text-align: center">
+                    <a href="delete.php?Medic_Id=<?php echo $result['Medic_Id'];?>"
+                    onclick="return confirm('ต้องการลบข้อมูลยา<?php echo $result['Medic_name'];?>')"> delete</a>
+                    
+                    </th>
+                </tr>
+                </tbody>
+                <?PHP
+            }
+            ?>
+        </table>
+    </div>
+</div>
 
                 <!-- Installation -->
                 <div class="doc-start-installation">

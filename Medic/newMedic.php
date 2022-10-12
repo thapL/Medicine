@@ -5,7 +5,7 @@
 
     
     
-    <title>STOCK MEDICINE</title>
+    <title>NEW MEDICINE</title>
     
     <meta name="description" content="MKS">
     <meta name="keywords" content="">
@@ -149,35 +149,62 @@ input[type=sub1mit]{
 
 <section id="doc-intro" class="light-bg p-top-100 p-bottom-100">
     <div class="container">
-    <h1><strong>stock medicine </strong></h1>
+    <h1><strong>new medicine    </strong></h1>
         <div class="row">
             <div class="text-center">
 
 
-<form action="adataMedicine.php" method="POST">
 
-<section>
+<form action="aMedicine.php" method="post">
+
+
+
  <br><br>
-    <table  cellspacing="8" class="center">
- 
-    <tr><td>ID : </td><td> <input type="number" name="Medic_Id"></td>
-    <tr><td>จำนวน : </td><td><input type="number" in="number" name="Medic_Newquan"></td></tr>
+    <table  cellspacing="8"  class="center">   
+    <tr><td>Id : </td><td><input type="number" name="Medic_Id"></td>
+    <tr><td>ชื่อ : </td><td><input type="text" name="Medic_name"></td></tr>
+    <tr><td>จำนวน : </td><td><input type="number" in="number" name="Medic_quan"></td></tr>
+    <tr><td>หมวด : </td><td><select name="Category_name">
+           <option value="แก้ปวดลดไข้">แก้ปวดลดไข้</option>
+           <option value="แก้ปวดกล้ามเนิ้อ">แก้ปวดกล้ามเนื้อ</option>
+           <option value="แก้แพ้ แก้คัน แก้ไอ">แก้แพ้ แก้คัน แก้ไอ</option>
+           <option value="ลดกรดเคลือบกระเพาะ">ลดกรดเคลือบกระเพาะ</option>
+           <option value="แก้ท้องเสีย">แก้ท้องเสีย</option>
+           <option value="ยาระบบประสาท">ยาระบบประสาท</option>
+           <option value="ยาน้ำ">ยาน้ำ</option>
+            <option value="ยาตา">ยาตา</option>
+            <option value="ยาทาภายใน/ภายนอก">ยาทาภายใน/ภายนอก</option> 
+            <option value="น้ำยาฆ่าเชื้อ">น้ำยาฆ่าเชื้อ</option>
+            <option value="เวชภัณฑ์">เวชภัณฑ์</option>
 
+        </select></td></tr>
+    <tr><td>หน่วย : </td><td><select name="Medic_Unit"  >
+        <option value="เม็ด">Tab</option>
+        <option value="ขวด">ขวด</option>
+        <option value="แผง">แผง</option>
+        <option value="ซอง">ซอง</option>
+        <option value="cap">cap</option>
+        <option value="ตลับ">ตลับ</option>
+        <option value="แผ่น">แผ่น</option>
+        <option value="ม้วน">ม้วน</option>
+        <option value="ห่อ">ห่อ</option>
+        <option value="ก้าน">ก้าน</option>
+        <option value="แพ๊ก">แพ๊ก</option>
+        <option value="กล่อง">กล่อง</option>
+        <option value="อัน">อัน</option>
+        <option value="แผ่น">แผ่น</option>
     </table><br/>
 
-    <button type="submit" name="submit" class="button" onclick="return confirm('ต้องการเพิ่มข้อมูลใช้หรือไม่')">Success</button>
-    <button type="reset" name="reset" class="reset">Reset</button>
-    </br>
-    
-<a href="show.php"  style = " background-color: #920deb;border: none;color: white; padding: 15px 32px;text-align: center;text-decoration: none;display: inline-block;
-font-size: 20px;
-margin: 4px 2px;
-cursor: pointer;
-font-weight:500;">   Show Detail    </a>
-    
+    <button type="submit" name="submit" class="button">Success</button>
+    <button type="reset" name="reset" class="reset">Reset</button></br>
 
+    
+    
+        </div>
+    </div>
+</div>
 </section>
 </form>
 
 </body>
-</html>
+</html>   
