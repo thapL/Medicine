@@ -5,14 +5,14 @@
 
     
     
-    <title>J.|thap</title>
+    <title>Edit Employee</title>
     
     <meta name="description" content="MKS">
     <meta name="keywords" content="">
     <meta name="author" content="tabthemes">
     
     <!-- Favicons -->
-    <link rel="shortcut icon" href="img/mks-logo.jpg">
+    <link rel="shortcut icon" href="../img/mks-logo.jpg">
    
     <!-- Google Web Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
@@ -68,13 +68,12 @@
                             <div class="collapse navbar-collapse" id="navbar-collapse">
 
                                 <ul class="nav navbar-nav navbar-right">
-                                    <li><a data-scroll href="#doc-start">Medic Table</a></li>
-                                    <li><a data-scroll href="#doc-header">Header</a></li>
-                                    <li><a data-scroll href="#doc-pe">Page Elements</a></li>
-                                    <li><a data-scroll href="#doc-slider">Slider</a></li>
-                                    <li><a data-scroll href="#doc-blog">Blog</a></li>
-                                    <li><a data-scroll href="#doc-portfolio">Portfolio</a></li>
-                                    <li><a data-scroll href="#doc-credits">Credits</a></li>
+                                <li><a href="../index.php">MEdic TABle</a></li>
+                                    <li><a  href="../Medic/newMedic.php">New Medicine</a></li>
+                                    <li><a href="../Medic/adData.php">stock Medicine</a></li>
+                                    <li><a href="../showEMP.php">Employee Table</a></li>
+                                    <li><a href="newEmp.php">New Employee</a></li>
+                                    
                                 </ul>
 
                             </div>
@@ -147,16 +146,15 @@ input[type=sub1mit]{
 <body  class="single_post_page" data-spy="scroll" data-target=".navbar-fixed-top" data-offset="100"><!--Add background-->
 
 <?php
-
+$employee_Id=$_GET['employee_Id'];
 include 'connect.php';
-    $employee_Id=$_GET['employee_Id'];
-    $query="SELECT*FROM dbo.tb_employee WHERE employee_Id=$employee_Id";
+    $query="SELECT*FROM dbo.tb_employee WHERE employee_Id='$employee_Id'";
     $result = sqlsrv_query($connect,$query);
     $row = sqlsrv_fetch_array($result);
     
 ?>
 
-<form action="eEMP.php" method="post">
+<form action="eEMP.php" method="POST">
 
 
 <section id="doc-intro" class="light-bg p-top-100 p-bottom-100">
@@ -168,32 +166,16 @@ include 'connect.php';
 
  <br><br>
     <table  cellspacing="8"  class="center">   
-    <tr><td>Id : </td><td><input type="number" name="employee_Id"></td>
-    <tr><td>ชื่อ : </td><td><input type="text" name="employee_name"></td></tr>
-    <tr><td>แผนก : </td><td><select name="departMent">
-           <option value="แก้ปวดลดไข้">แก้ปวดลดไข้</option>
-           <option value="แก้ปวดกล้ามเนิ้อ">แก้ปวดกล้ามเนื้อ</option>
-           <option value="แก้แพ้ แก้คัน แก้ไอ">แก้แพ้ แก้คัน แก้ไอ</option>
-           <option value="ลดกรดเคลือบกระเพาะ">ลดกรดเคลือบกระเพาะ</option>
-           <option value="แก้ท้องเสีย">แก้ท้องเสีย</option>
-           <option value="ยาระบบประสาท">ยาระบบประสาท</option>
-           <option value="ยาน้ำ">ยาน้ำ</option>
-            <option value="ยาตา">ยาตา</option>
-            <option value="ยาทาภายใน/ภายนอก">ยาทาภายใน/ภายนอก</option> 
-            <option value="น้ำยาฆ่าเชื้อ">น้ำยาฆ่าเชื้อ</option>
-            <option value="เวชภัณฑ์">เวชภัณฑ์</option>
-        </select></td></tr>
-    <tr><td>ตำแหน่ง : </td><td><input type="text" name="Position"> </td></tr><br>
+
+    <tr><td>Id : </td><td><input type=text name="employee_Id" id="employee_Id" value="<?php echo $row['employee_Id'];?>" disabled>
+                          <input type="hidden" name="employee_Id" value="<?php echo $row['employee_Id'];?>"></td>    
+    <tr><td>ชื่อ : </td><td><input type="text" name="employee_name" value="<?php echo $row['employee_name'];?>"></td></tr>
+    <tr><td>แผนก : </td><td><input type="text" name="departMent"  value="<?php echo $row['departMent'];?>"></td></tr>
+    <tr><td>ตำแหน่ง : </td><td><input type="text" name="Position"  value="<?php echo $row['Position'];?>"> </td></tr><br>
     </table><br/>
 
     <button type="submit" name="submit" class="button">Success</button>
     <button type="reset" name="reset" class="reset">Reset</button></br>
-
-    <a href="show.php"  style = " background-color: #920deb;border: none;color: white; padding: 15px 32px;text-align: center;text-decoration: none;display: inline-block;
-    font-size: 20px;
-    margin: 4px 2px;
-    cursor: pointer;
-    font-weight:500;">  Detail    </a>
     
         </div>
     </div>

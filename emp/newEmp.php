@@ -5,7 +5,7 @@
 
     
     
-    <title>DISPENSED</title>
+    <title>NEW EMPOLYEE</title>
     
     <meta name="description" content="MKS">
     <meta name="keywords" content="">
@@ -57,7 +57,7 @@
                             <!-- Logo -->
                             <div class="logo-container">
                                 <div class="logo-wrap local-scroll">
-                                  <a href="index.php">
+                                  <a href="../index.php">
                                     <img class="logo" src="../img/mks-logo.jpg" size="10px" alt="logo" data-rjs="2">
                                   </a>
                                 </div>
@@ -68,13 +68,12 @@
                             <div class="collapse navbar-collapse" id="navbar-collapse">
 
                                 <ul class="nav navbar-nav navbar-right">
-                                    <li><a data-scroll href="#doc-start">Medic Table</a></li>
-                                    <li><a data-scroll href="#doc-header">Header</a></li>
-                                    <li><a data-scroll href="#doc-pe">Page Elements</a></li>
-                                    <li><a data-scroll href="#doc-slider">Slider</a></li>
-                                    <li><a data-scroll href="#doc-blog">Blog</a></li>
-                                    <li><a data-scroll href="#doc-portfolio">Portfolio</a></li>
-                                    <li><a data-scroll href="#doc-credits">Credits</a></li>
+                                <li><a href="../index.php">MEdic TABle</a></li>
+                                    <li><a  href="../Medic/newMedic.php">New Medicine</a></li>
+                                    <li><a href="../Medic/adData.php">stock Medicine</a></li>
+                                    <li><a href="../showEMP.php">Employee Table</a></li>
+                                    <li><a href="newEmp.php">New Employee</a></li>
+                                    
                                 </ul>
 
                             </div>
@@ -149,32 +148,35 @@ input[type=sub1mit]{
 
 <section id="doc-intro" class="light-bg p-top-100 p-bottom-100">
     <div class="container">
-    <h1><strong>dispensed</strong></h1>
+    <h1><strong>new employee</strong></h1>
         <div class="row">
             <div class="text-center">
 
 
-<section>
- <br><br>
-    <table  cellspacing="8" class="center">
- 
-    <tr><td>ID : </td><td><input type="number" name="Medic_Id"></td>
-    <tr><td>จำนวน : </td><td><input type="number" in="number" name="Medic_disquan"></td></tr>
 
+            <form action="queryEmp.php" method="POST">
+
+<section>
+<center>
+ <br><br>
+    <table  cellspacing="8" >
+ 
+    <tr><td>Id : </td><td><input type="number" name="employee_Id"></td>
+    <tr><td>ชื่อ : </td><td><input type="text" name="employee_name"></td></tr>
+    <tr><td>แผนก : </td><td><input type="text" name="departMent"></td></tr>
+    <tr><td>ตำแหน่ง : </td><td><input type="text" name="Position"> </td></tr><br>
     </table><br/>
 
-    <button type="submit" name="submit" class="button" onclick="return confirm('ยืนยัน')">Success</button>
-    <button type="reset" name="reset" class="reset">Reset</button></br>
-
-    <a href="show.php"  style = " background-color: #920deb;border: none;color: white; padding: 15px 32px;text-align: center;text-decoration: none;display: inline-block;
-    font-size: 20px;
-    margin: 4px 2px;
-    cursor: pointer;
-    font-weight:500;">   Show Detail    </a>
+    <button type="submit" name="submit" class="button"   onclick="return confirm('ต้องการเพิ่มข้อมูลใช้หรือไม่')">Success</button>
+    <button type="reset" name="reset" class="reset">Reset</button>
+</br>
     
+
+    
+
+</center>
 
 </section>
 </form>
-
 </body>
-</html>
+</html>   

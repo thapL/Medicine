@@ -57,7 +57,7 @@
                             <!-- Logo -->
                             <div class="logo-container">
                                 <div class="logo-wrap local-scroll">
-                                  <a href="index.php">
+                                  <a href="../index.php">
                                     <img class="logo" src="../img/mks-logo.jpg" size="10px" alt="logo" data-rjs="2">
                                   </a>
                                 </div>
@@ -68,13 +68,11 @@
                             <div class="collapse navbar-collapse" id="navbar-collapse">
 
                                 <ul class="nav navbar-nav navbar-right">
-                                    <li><a data-scroll href="#doc-start">Medic Table</a></li>
-                                    <li><a data-scroll href="#doc-header">Header</a></li>
-                                    <li><a data-scroll href="#doc-pe">Page Elements</a></li>
-                                    <li><a data-scroll href="#doc-slider">Slider</a></li>
-                                    <li><a data-scroll href="#doc-blog">Blog</a></li>
-                                    <li><a data-scroll href="#doc-portfolio">Portfolio</a></li>
-                                    <li><a data-scroll href="#doc-credits">Credits</a></li>
+                                    <li><a href="../index.php">Medic Table</a></li>
+                                    <li><a  href="newMedic.php">New Medicine</a></li>
+                                    <li><a href="adData.php">stock Medicine</a></li>
+                                    <li><a href="../showEMP.php">Employee Table</a></li>
+                                    <li><a href="../emp/newEmp.php">New Employee</a></li>
                                 </ul>
 
                             </div>

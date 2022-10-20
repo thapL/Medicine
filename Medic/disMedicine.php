@@ -29,7 +29,7 @@ if($connect === FALSE)
     if($result)
     {
         echo "จ่ายยาแล้ว";
-        echo "<meta http-equiv='refresh' content='2; url=show.php'>";
+        echo "<meta http-equiv='refresh' content='2; url=../index.php'>";
     }   
     else
     {

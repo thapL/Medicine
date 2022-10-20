@@ -10,12 +10,12 @@ $result = sqlsrv_query($connect,$add);
     if($result)
     {
         echo "ลบข้อมูลแล้ว";
-       echo"<mete http-equiv='refresh' content='2;url=showEmp.php'>";
+       echo"<mete http-equiv='refresh' content='2;url=../showEmp.php'>";
         
     }
     else
     {
         die( print_r( sqlsrv_errors(), true));
         echo"ไม่สามารถลบข้อมูลได้";
-    }   echo "<meta http-equiv='refresh' content='2; url=showEmp.php'>";
+    }   echo "<meta http-equiv='refresh' content='2; url=../showEmp.php'>";
     ?>

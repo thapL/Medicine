@@ -1,24 +1,22 @@
 <?php
 
-isset($_POST['Medic_Id'])?$Medic_Id=$_POST['Medic_Id']:$Medic_Id="";
-$Medic_name = $_POST['Medic_name'];
-$Medic_quan   = $_POST['Medic_quan'];
-$Medic_Unit = $_POST['Medic_Unit'];
-$Category_name = $_POST['Category_name'];
+$employee_Id = $_POST['employee_Id'];
+$employee_name = $_POST['employee_name'];
+$departMent = $_POST['departMent'];
+$Position = $_POST['Position'];
 
   include 'connect.php';
-    $add = "UPDATE dbo.tb_Medic SET  Medic_name='$Medic_name',
-                                     Medic_quan='$Medic_quan',
-                                     Medic_Unit='$Medic_Unit',
-                                     Category_name='$Category_name'
-                                     WHERE Medic_Id='$Medic_Id' ";
+    $add = "UPDATE dbo.tb_employee SET   employee_name='$employee_name',
+                                         departMent='$departMent',
+                                         Position='$Position'
+                                         WHERE employee_Id='$employee_Id' ";
 
 $result = sqlsrv_query($connect,$add);
     sqlsrv_close($connect);
     if($result)
     {
         echo "แก้ไขข้อมูลแล้ว";
-        echo "<meta http-equiv='refresh' content='2; url=show.php'>";
+        echo "<meta http-equiv='refresh' content='2; url=../showEmp.php'>";
     }
     else
     {
