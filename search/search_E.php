@@ -16,7 +16,9 @@
                    <th style="text-align: center">
                    <a href="emp/deleteEmp.php?employee_Id=<?php echo $result['employee_Id'];?>"
                    onclick="return confirm('ต้องการลบข้อมูลพนักงาน : <?php echo $result['employee_name'];?> หรือไม่')"> delete</a>
-                   
+                   <th style="text-align: center">
+                   <a href="showH.php?employee_Id=<?php echo $result['employee_Id'];?>"
+                   onclick="return confirm('ต้องการดูประวัติการเบิกยาพนักงาน : <?php echo $result['employee_name'];?> หรือไม่')"> history</a>
                     
                     </th>
                 </tr>

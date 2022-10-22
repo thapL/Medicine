@@ -16,6 +16,7 @@
     }
     else
     {
+        echo "มีรหัสยา'$Medic_Id' นี้อยู่เเล้ว ";
         die( print_r( sqlsrv_errors(), true));
     }
     

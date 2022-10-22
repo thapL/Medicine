@@ -161,7 +161,7 @@ input[type=sub1mit]{
  <br><br>
     <table  cellspacing="8" >
  
-    <tr><td>Id : </td><td><input type="number" name="employee_Id"></td>
+    <tr><td>Id : </td><td><input type="text" name="employee_Id"></td>
     <tr><td>ชื่อ : </td><td><input type="text" name="employee_name"></td></tr>
     <tr><td>แผนก : </td><td><input type="text" name="departMent"></td></tr>
     <tr><td>ตำแหน่ง : </td><td><input type="text" name="Position"> </td></tr><br>

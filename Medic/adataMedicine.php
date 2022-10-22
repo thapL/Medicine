@@ -11,7 +11,7 @@
     if($result)
     {
         echo "เพิ่มข้อมูลแล้ว";
-        echo "<meta http-equiv='refresh' content='2; url=../index.php'>";
+        echo "<meta http-equiv='refresh' content='1; url=adData.php'>";
     }   
     else
     {

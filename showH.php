@@ -18,7 +18,7 @@
                 }
     </style>
     
-    <title>Medicine</title>
+    <title>Employee Table</title>
     
     <meta name="description" content="N.Agency - Responisve Landing Page for Agency">
     <meta name="keywords" content="">
@@ -51,8 +51,13 @@
     <!-- Custom CSS -->
     <link href="css/style.css" rel="stylesheet">
     <link href="doc.css" rel="stylesheet">
-    <link href="css/search.css" rel="stylesheet">
     
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
   </head>
   <body class="single_post_page" data-spy="scroll" data-target=".navbar-fixed-top" data-offset="100">
     
@@ -93,12 +98,12 @@
                             <div class="collapse navbar-collapse" id="navbar-collapse">
 
                                 <ul class="nav navbar-nav navbar-right">
-                                    <li><a data-scroll href="#doc-teble">MEdic TABAL</a></li>
-                                    <li><a data-scroll href="#doc-dis">Dispansed</a></li>
+                                    <li><a href="index.php">MEdic TABAL</a></li>
                                     <li><a  href="Medic/newMedic.php">New Medicine</a></li>
                                     <li><a href="Medic/adData.php">stock Medicine</a></li>
                                     <li><a href="showEMP.php">Employee Table</a></li>
                                     <li><a href="emp/newEmp.php">New Employee</a></li>
+                                    
                                 </ul>
 
                             </div>
@@ -113,110 +118,88 @@
     <!-- End Navigation -->
 
 <?php include "connect.php";
-$stmt   = "select * from dbo.tb_Medic ";
+$employee_Id=$_GET['employee_Id'];
+$stmt   = "SELECT * from dbo.tb_disHis WHERE employee_Id ='$employee_Id' ";
 $query  = sqlsrv_query($connect,$stmt);      ?>      <!-- ต่อเข้ากับฐานข้อมูล-->
 
-
     <!-- Start Intro -->
+    <section id="doc-intro" class="light-bg p-top-100 p-bottom-100">
+        <div class="container">
+            <div class="row">
+                <div class="text-center">
+          
+                    <h1><strong>medical room - medical storage</strong></h1>
+                    <h3><strong>responsible by P.Em </strong></h3>
+                    
+                </div>
+            </div>
+            </div>
+        </div>
+    </section>
+    <!-- End Intro -->
 
+
+   
 <!-- start  table -->
     <section id="doc-teble" class="p-top-60 p-bottom-60">
         <div class="container">
             <div class="row">
-                <h2><strong>employee table</strong></h2>
 
+                <h2><strong>Employee Table</strong></h2>
 
 <!-- start search bar -->
 
-    <form action="<?=$_SERVER['PHP_SELF'];?>" method="GET">
+<form action="<?=$_SERVER['PHP_SELF'];?>" method="GET">
                 กรอกคำค้นหา <input type="text" name="txtSearch" placeholder="กรอกคำค้นหา"  >
                             <input type="submit" value="search">
     </form>
 
 <!-- end search bar -->
 
-
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<div class="container">
+    <div class="container">
 
     <div class="row">
         <table class="table table-condensed table-striped table-bordered background-color: while" >
-            <thead>
+        <thead>
            
-            <tr>
-            <th style="text-align: center">ID</th>
-                <th style="text-align: center">Name</th>
-                <th style="text-align: center">Quantity</th>
-                <th style="text-align: center">Uint</th>
-                <th style="text-align: center">Category</th>
-                <th style="text-align: center">Edit</th>
-                <th style="text-align: center">Delete</th>
-            <tr>
-            </thead>
-            <?php
-         isset( $_GET['txtSearch'] ) ? $txtSearch = $_GET['txtSearch'] : $txtSearch = ""; #เช็คตัวแปล#$txtSearch ว่าเป็นค่าว่างหรือไม่
-         if($txtSearch == "") { #ถ้ามีค่าตัวแปรเป็นค่าว่างให้แสดงตารางที่อยู่ในไฟล์อื่น
-            include ('search/search_M.php');  
-         }else{
+           <tr>
+               <th style="text-align: center">รหัสพนักงาน</th>
+               <th style="text-align: center">รหัสยา</th>
+               <th style="text-align: center">จำนวนยาที่เบิก</th>
+               <th style="text-align: center">วันที่เบิก</th>
             
-         $sql ="SELECT * FROM dbo.tb_Medic WHERE Medic_name LIKE '%$txtSearch%' 
-                                           OR Category_name LIKE '%$txtSearch%' 
-                                           OR Medic_Id LIKE '$txtSearch'
-                                           OR Medic_Unit LIKE '%$txtSearch%'" ;
-         $Search = sqlsrv_query($connect,$sql);
-     
-        while ($result = sqlsrv_fetch_array($Search))
-             {
-        ?>
-                   <tbody>
-                             <tr>
-                                   <th><?PHP echo $result["Medic_Id"]; ?></th>
-                                   <th><?PHP echo $result["Medic_name"];?> &nbsp; </th>
-                                   <th><?php echo $result["Medic_quan"];?></th>
-                                   <th><?PHP echo $result["Medic_Unit"];?></th>
-                                   <th><?PHP echo $result["Category_name"];?></th>
-                                   <th style="text-align: center">
-                                   <a href="Medic/editdat.php?Medic_Id=<?php echo $result['Medic_Id'];?>"
-                                   onclick="return confirm('ต้องการแก้ไขข้อมูล <?php echo $result['Medic_name'];?> หรือไม่')"> edit</a>
-                                   <th style="text-align: center">
-                                   <a href="Medic/delete.php?Medic_Id=<?php echo $result['Medic_Id'];?>"
-                                   onclick="return confirm('ต้องการลบข้อมูลยา <?php echo $result['Medic_name'];?>หรือไม่')"> delete</a>
-                                   
-                                   </th>
-                                </tr>
-                           </tbody> 
-                           <?PHP
-                       }
-                    }
-       ?>
-       
-   </table>
-            
+           <tr>
+           </thead>
+           <?php
+          
+              while ($result = sqlsrv_fetch_array($query,SQLSRV_FETCH_ASSOC))
+              {
+                
+                  ?>
 
-           
-    </div>
+                  <tbody>
+                  <tr>
+                     <th  style="text-align: center"><?PHP echo $result["employee_Id"]; ?></th>
+                     <th  style="text-align: center"><?PHP echo $result["Medic_Id"];?> &nbsp; </th>
+                     <th  style="text-align: center"><?php echo $result["DisQuan"];?></th>
+                     <th style="text-align: center"><?PHP echo $result[ "DispensedDate"];?>&nbsp;</th> 
+                     
+                     
+                      </th>
+                  </tr>
+                  </tbody>
+                  <?PHP
+              }
+           ?>
+       </table>
+   </div>
 </div>
-
-</script>
 <!-- End table -->
 
               
       <!-- start dispensoed -->            
-        <section id="doc-dis">
-         <br><br>
-                <h4><strong>dispensed<strong></h4>
-                    <form action="Medic\disMedicine.php" method="post">
-                                <table  cellspacing="8" class="center">
-                                <tr><td>รหัสพนักงาน : </td><td><input type="text" name="employee_Id"></td>
-                                <tr><td>ยา ID : </td><td><input type="number" name="Medic_Id"></td>
-                                <tr><td>จำนวน : </td><td><input type="number" in="number" name="Medic_disquan"></td></tr>
-
-                          </table><br/>
-                                <button type="submit" name="submit" class="button" onclick="return confirm('ยืนยัน')">Success</button>
-                                <button type="reset" name="reset" class="reset">Reset</button></br>
-                    </form>                
-
-        </section>
+      
 
      <!-- end dispensed-->
 

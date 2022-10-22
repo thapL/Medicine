@@ -16,6 +16,7 @@
     }
     else
     {
+        echo "มีรหัสพนักงาน $employee_Id นี้อยู่แล้ว";
         die( print_r( sqlsrv_errors(), true));
     }
     

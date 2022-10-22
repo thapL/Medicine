@@ -144,7 +144,7 @@ $query  = sqlsrv_query($connect,$stmt);      ?>      <!-- ต่อเข้า�
         <div class="container">
             <div class="row">
 
-                <h2><strong>medic table</strong></h2>
+                <h2><strong>Employee Table</strong></h2>
 
 <!-- start search bar -->
 
@@ -167,7 +167,7 @@ $query  = sqlsrv_query($connect,$stmt);      ?>      <!-- ต่อเข้า�
                <th style="text-align: center">Name</th>
                <th style="text-align: center">DepartMent</th>
                <th style="text-align: center">Position</th>
-               <th style="text-align: center">edit</th>
+               <th style="text-align: center">Edit</th>
                <th style="text-align: center">Delete</th>
            <tr>
            </thead>
@@ -178,7 +178,7 @@ $query  = sqlsrv_query($connect,$stmt);      ?>      <!-- ต่อเข้า�
             }else{
                
             $sql ="SELECT * FROM dbo.tb_employee WHERE employee_Id LIKE '$txtSearch' 
-                                              OR employee_name LIKE '%$txtSearch%' 
+                                              OR employee_name LIKE '$txtSearch' 
                                               OR departMent LIKE '%$txtSearch%'
                                               OR Position LIKE '%$txtSearch%'" ;
             $Search = sqlsrv_query($connect,$sql);
@@ -198,6 +198,9 @@ $query  = sqlsrv_query($connect,$stmt);      ?>      <!-- ต่อเข้า�
                    <th style="text-align: center">
                    <a href="emp/deleteEmp.php?employee_Id=<?php echo $result['employee_Id'];?>"
                    onclick="return confirm('ต้องการลบข้อมูลพนักงาน : <?php echo $result['employee_name'];?> หรือไม่')"> delete</a>
+                   <th style="text-align: center">
+                   <a href="showH.php?employee_Id=<?php echo $result['employee_Id'];?>"
+                   onclick="return confirm('ต้องการดูประวัติการเบิกยาพนักงาน : <?php echo $result['employee_name'];?> หรือไม่')"> history</a>
                    
                    </th>
                </tr>
