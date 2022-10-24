@@ -119,7 +119,12 @@
 
 <?php include "connect.php";
 $employee_Id=$_GET['employee_Id'];
-$stmt   = "SELECT * from dbo.tb_disHis WHERE employee_Id ='$employee_Id' ";
+$stmt = "SELECT *
+FROM ((dbo.tb_disHis 
+INNER JOIN dbo.tb_employee ON dbo.tb_disHis.employee_Id=dbo.tb_employee.employee_Id)
+INNER JOIN dbo.tb_Medic ON dbo.tb_disHis.Medic_Id=dbo.tb_Medic.Medic_Id) 
+WHERE tb_disHis.employee_Id = '$employee_Id' ";
+#$stmt   = "SELECT * from dbo.tb_disHis WHERE employee_Id ='$employee_Id' ";
 $query  = sqlsrv_query($connect,$stmt);      ?>      <!-- ต่อเข้ากับฐานข้อมูล-->
 
     <!-- Start Intro -->
@@ -165,7 +170,8 @@ $query  = sqlsrv_query($connect,$stmt);      ?>      <!-- ต่อเข้า�
            
            <tr>
                <th style="text-align: center">รหัสพนักงาน</th>
-               <th style="text-align: center">รหัสยา</th>
+               <th style="text-align: center">ชื่อพนักงาน</th>
+               <th style="text-align: center">ยาที่เบิก</th>
                <th style="text-align: center">จำนวนยาที่เบิก</th>
                <th style="text-align: center">วันที่เบิก</th>
             
@@ -181,10 +187,10 @@ $query  = sqlsrv_query($connect,$stmt);      ?>      <!-- ต่อเข้า�
                   <tbody>
                   <tr>
                      <th  style="text-align: center"><?PHP echo $result["employee_Id"]; ?></th>
-                     <th  style="text-align: center"><?PHP echo $result["Medic_Id"];?> &nbsp; </th>
+                     <th  style="text-align: center"><?PHP echo $result["employee_name"]; ?></th>
+                     <th  style="text-align: center"><?PHP echo $result["Medic_name"];?> &nbsp; </th>
                      <th  style="text-align: center"><?php echo $result["DisQuan"];?></th>
-                     <th style="text-align: center"><?PHP echo $result[ "DispensedDate"];?>&nbsp;</th> 
-                     
+                     <th style="text-align: center"><?PHP  echo $result["TimeDis"];?>&nbsp;</th> 
                      
                       </th>
                   </tr>

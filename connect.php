@@ -22,7 +22,7 @@ $connectionInfo = array(
 $connect = sqlsrv_connect( $serverName, $connectionInfo);
 
 if($connect === FALSE)
-{
+{ echo "disconnect";
 die( print_r( sqlsrv_errors(), true));
 }
 ?>
